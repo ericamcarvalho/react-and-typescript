@@ -1,15 +1,26 @@
 import { useReducer } from "react";
 
-type CounterAction = {
-  type: "INCREMENT" | "DECREMENT" | "SET";
-  payload?: number;
-};
+// type CounterAction = {
+//   type: "INCREMENT" | "DECREMENT" | "SET";
+//   payload?: number;
+// };
 
 type CounterState = {
   value: number;
 };
 
-const reducer = (state, action) => {
+type BasicCounterAction = {
+  type: "INCREMENT" | "DECREMENT";
+};
+
+type SetCounterAction = {
+  type: "SET";
+  payload: number;
+};
+
+type CounterAction = BasicCounterAction | SetCounterAction;
+
+const reducer = (state: CounterState, action: CounterAction) => {
   switch (action.type) {
     case "INCREMENT":
       return { value: state.value + 1 };
@@ -17,8 +28,8 @@ const reducer = (state, action) => {
       return { value: state.value - 1 };
     case "SET":
       return { value: action.payload };
-    // default:
-    //   return state;
+    default:
+      return state;
   }
 };
 
@@ -47,16 +58,3 @@ const Counter = () => {
 };
 
 export default Counter;
-
-// BETTER APPROACH:
-
-// type BasicCounterAction = {
-//   type: "INCREMENT" | "DECREMENT";
-// };
-
-// type SetCounterAction = {
-//   type: "SET";
-//   payload: number;
-// };
-
-// type BetterAction = BasicCounterAction | SetCounterAction;

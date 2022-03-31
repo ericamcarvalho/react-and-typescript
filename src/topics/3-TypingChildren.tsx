@@ -7,7 +7,9 @@ React.ReactChild[] - Accepts multiple children, but it doesn't accept a single c
 React.ReactNode - Accepts everything.
  */
 
-const Box = ({ children }) => {
+import React from "react";
+
+const Box = ({ children }: { children: React.ReactNode }) => {
   return (
     <section style={{ padding: "1em", border: "5px solid purple" }}>
       {children}

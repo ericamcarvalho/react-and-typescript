@@ -2,7 +2,7 @@ type NameTagProps = {
   name: string;
 };
 
-const NameTag = ({ name }) => {
+const NameTag = ({ name }: NameTagProps) => {
   return (
     <main>
       <h1>My Name Is</h1>

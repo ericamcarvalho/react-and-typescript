@@ -1,6 +1,6 @@
 type BoxProps = {
   children: React.ReactNode;
-  // style?: React.CSSProperties;
+  style?: React.CSSProperties;
 };
 
 const Box = ({ children, style = {} }: BoxProps) => {

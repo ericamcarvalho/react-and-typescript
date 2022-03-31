@@ -8,7 +8,7 @@ export type UserProps = Omit<UserModel, "accountId">;
 
 export type AlternateUserProps = Pick<UserModel, "displayName" | "isVerified">;
 
-const CurrentUser = ({ accountId, displayName, isVerified }: UserProps) => {
+const CurrentUser = ({ displayName, isVerified }: UserProps) => {
   return (
     <header>
       <h2>

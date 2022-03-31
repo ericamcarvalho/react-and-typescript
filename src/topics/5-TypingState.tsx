@@ -18,11 +18,8 @@ export const Application = () => {
 
   return (
     <main>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <CharacterInformation character={character} />
-      )}
+      {loading && <p>loading...</p>}
+      {character && <CharacterInformation character={character} />}
     </main>
   );
 };
